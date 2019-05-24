@@ -1,0 +1,13 @@
+<li [ngClass]="{'list-group-item': true,
+              'list-group-item-success': loveIt > dontloveIt,
+              'list-group-item-danger': loveIt < dontloveIt
+        }">
+  <div>
+    <span style="float: right; color:grey">{{post.created_at | date: 'short'}}</span>
+    <h3> {{post.title }}</h3>
+    <p>  {{post.content}}</p>
+    <button class="btn btn-success" style="margin-right: 10px" (click)="likeIt()">{{loveIt}} Love It!</button>
+    <button class="btn btn-danger" (click)="dislike()">{{dontloveIt}} Hate It!</button>
+  </div>
+
+</li>
