@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Post} from './post';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -8,12 +9,21 @@ import {Post} from './post';
 })
 export class AppComponent {
 
-  posts = [
-    new Post('Post 1', 'this is my first Post hope that you will like it',10, new Date()),
-    new Post('Post 2', 'this is my second Post hope that you will like it',2, new Date()),
-    new Post('Post 3', 'this is my third Post hope that you will like it',6, new Date())
+  constructor() {
 
-  ];
+    var firebaseConfig = {
+      apiKey: 'AIzaSyAyjK6k0gS3f7k_TjE8pwQCGIzgvOh08lM',
+      authDomain: 'blog-3727e.firebaseapp.com',
+      databaseURL: 'https://blog-3727e.firebaseio.com',
+      projectId: 'blog-3727e',
+      storageBucket: 'blog-3727e.appspot.com',
+      messagingSenderId: '659545105896',
+      appId: '1:659545105896:web:5a386c137e774110'
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+  }
 
 
 

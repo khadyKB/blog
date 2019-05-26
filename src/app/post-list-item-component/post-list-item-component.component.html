@@ -3,11 +3,12 @@
               'list-group-item-danger': loveIt < dontloveIt
         }">
   <div>
-    <span style="float: right; color:grey">{{post.created_at | date: 'short'}}</span>
-    <h3> {{post.title }}</h3>
-    <p>  {{post.content}}</p>
+    <span style="float: right; color:grey">{{post._created_at | date: 'short'}}</span>
+    <h3> {{post._title }}</h3>
+    <p>  {{post._content}}</p>
     <button class="btn btn-success" style="margin-right: 10px" (click)="likeIt()">{{loveIt}} Love It!</button>
     <button class="btn btn-danger" (click)="dislike()">{{dontloveIt}} Hate It!</button>
+    <button class="btn btn-danger pull-right" (click)="onDeletePost()">Supprimer Post</button>
   </div>
 
 </li>
